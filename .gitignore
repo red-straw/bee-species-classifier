@@ -28,6 +28,7 @@ models/*
 model_storage/*
 !model_storage/.gitkeep
 *.pt
+!model_storage/*.pt
 *.pth
 *.onnx
 *.engine

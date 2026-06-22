@@ -2,7 +2,7 @@
 
 Flask와 Ultralytics YOLO를 사용하는 6종 벌 객체 탐지 웹앱입니다.
 
-## 포함된 기능
+## 기능
 
 - `.pt` YOLO 모델 업로드 및 로드
 - 단일 이미지 예측
@@ -19,12 +19,12 @@ Flask와 Ultralytics YOLO를 사용하는 6종 벌 객체 탐지 웹앱입니다
 ├── requirements.txt
 ├── templates/
 ├── static/
-├── models/          # 웹에서 업로드한 .pt 모델 저장 위치
-├── model_storage/   # 보조 스크립트용 모델 저장 위치
+├── models/          # 웹에서 업로드한 모델 저장 위치
+├── model_storage/   # 기본 제공/보관용 모델 위치
 └── test/            # mAP 평가용 test.json 및 이미지 위치
 ```
 
-대용량 모델 파일, 테스트 이미지, 평가 결과, 가상환경은 Git에 포함하지 않습니다.
+`model_storage/`의 `.pt` 모델 파일은 Git LFS로 관리합니다. zip 파일, 가상환경, 테스트 이미지, 평가 결과, 캐시 파일은 Git에 포함하지 않습니다.
 
 ## 설치
 
@@ -58,9 +58,9 @@ http://127.0.0.1:5002
 
 ## 모델 파일
 
-모델 파일은 GitHub에 포함하지 않습니다. 웹 화면에서 `.pt` 파일을 업로드하면 `models/` 폴더에 저장되고 즉시 로드됩니다.
+웹 화면에서 `.pt` 파일을 업로드하면 `models/` 폴더에 저장되고 즉시 로드됩니다. `models/`는 로컬 업로드용 폴더라서 Git에는 포함하지 않습니다.
 
-보조 스크립트 `make_pred_labels.py`를 사용할 경우 기본 모델 위치는 다음과 같습니다.
+보조 스크립트 `make_pred_labels.py`의 기본 모델 위치는 다음과 같습니다.
 
 ```text
 model_storage/best_yolo26m_8276_img768_map873.pt
@@ -78,6 +78,15 @@ test/
 
 평가를 실행하면 `converted_test/`와 `map_results/`가 자동 생성됩니다. 이 폴더들은 Git에 포함하지 않습니다.
 
-## 참고
+## Git LFS
+
+이 저장소는 모델 파일을 위해 Git LFS를 사용합니다. 저장소를 새로 clone한 뒤 모델 파일이 정상적으로 내려오지 않았다면 아래 명령을 실행하세요.
+
+```bash
+git lfs install
+git lfs pull
+```
+
+## 경로
 
 프로젝트 내부 경로는 현재 프로젝트 폴더 기준으로 계산됩니다. 따라서 프로젝트 폴더를 `C:`, `D:`, 다른 사용자 폴더 어디에 옮겨도 같은 구조만 유지하면 실행할 수 있습니다.
