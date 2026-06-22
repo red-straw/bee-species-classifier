@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Bee YOLO Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <h1>Bee YOLO Detector</h1>
+            <p>6종 벌 객체 탐지 및 mAP 평가 웹 시스템</p>
+        </header>
+
+        <main class="container">
+
+            <section class="card">
+                <h2>모델 정보</h2>
+
+                <p>현재 모델: <strong id="modelName">모델 없음</strong></p>
+                <p>GPU 상태: <strong id="gpuStatus">확인 중...</strong></p>
+                <p>클래스: apis, black, crabro, ggoma, jangsu, simil</p>
+
+                <div class="upload-row">
+                    <input id="modelFile" type="file" accept=".pt">
+                    <button id="uploadModelBtn">모델 업로드</button>
+                </div>
+
+                <p id="modelMessage" class="message"></p>
+            </section>
+
+            <section class="card">
+                <h2>이미지 추론</h2>
+
+                <div class="upload-row">
+                    <input id="imageFile" type="file" accept="image/*">
+                    <button id="predictBtn">예측 실행</button>
+                </div>
+
+                <p id="predictMessage" class="message"></p>
+
+                <div class="prediction-summary">
+                    <p>예측 클래스: <strong id="topClass">-</strong></p>
+                    <p>신뢰도: <strong id="topConfidence">-</strong></p>
+                    <p>탐지 개수: <strong id="numDetections">-</strong></p>
+                </div>
+
+                <div id="resultArea" class="result-area">
+                    <div class="placeholder">예측 결과 이미지가 여기에 표시됩니다.</div>
+                </div>
+
+                <div id="detectionList" class="detection-list"></div>
+            </section>
+
+            <section class="card">
+                <h2>mAP 평가</h2>
+
+                <button id="evaluateBtn">test 데이터 mAP 계산</button>
+                <p id="evaluateMessage" class="message"></p>
+
+                <div class="metric-grid">
+                    <div class="metric">
+                        <span>mAP50</span>
+                        <strong id="map50">-</strong>
+                    </div>
+                    <div class="metric">
+                        <span>mAP50-95</span>
+                        <strong id="map5095">-</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Precision</span>
+                        <strong id="precision">-</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Recall</span>
+                        <strong id="recall">-</strong>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

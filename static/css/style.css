@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, "Noto Sans KR", sans-serif;
+    background: #111;
+    color: #f5f5f5;
+}
+
+.page {
+    min-height: 100vh;
+}
+
+.header {
+    padding: 40px 60px;
+    background: linear-gradient(135deg, #111, #2b2100);
+    border-bottom: 1px solid #333;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 42px;
+    color: #ffc400;
+}
+
+.header p {
+    margin-top: 10px;
+    color: #ddd;
+}
+
+.container {
+    padding: 30px 60px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.card {
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #ffc400;
+}
+
+button {
+    background: #ffc400;
+    color: #111;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ffdb4d;
+}
+
+input[type="file"] {
+    margin-right: 12px;
+}
+
+.placeholder {
+    margin-top: 20px;
+    padding: 30px;
+    border: 1px dashed #555;
+    color: #aaa;
+    border-radius: 12px;
+}
+
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.metric {
+    background: #111;
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.metric span {
+    display: block;
+    color: #aaa;
+    margin-bottom: 8px;
+}
+
+.metric strong {
+    font-size: 28px;
+    color: #ffc400;
+}
+
+.upload-row {
+    margin-top: 16px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.message {
+    margin-top: 14px;
+    color: #ddd;
+}
+
+.message.success {
+    color: #7CFF8A;
+}
+
+.message.error {
+    color: #ff7777;
+}
+
+.prediction-summary {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.prediction-summary p {
+    background: #111;
+    border: 1px solid #333;
+    padding: 14px;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.result-area {
+    margin-top: 20px;
+}
+
+.result-image {
+    max-width: 100%;
+    border-radius: 12px;
+    border: 1px solid #333;
+}
+
+.detection-list {
+    margin-top: 20px;
+}
+
+.detection-list h3 {
+    color: #ffc400;
+}
+
+.detection-item {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.detection-item span {
+    color: #ccc;
+}

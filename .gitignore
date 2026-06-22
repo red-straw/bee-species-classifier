@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# IDE and local tool state
+.idea/
+.vscode/
+.agents/
+.codex/
+
+# Uploaded or trained model files
+models/*
+!models/.gitkeep
+model_storage/*
+!model_storage/.gitkeep
+*.pt
+*.pth
+*.onnx
+*.engine
+*.zip
+
+# Datasets and generated evaluation outputs
+test/*
+!test/.gitkeep
+converted_test/
+map_results/
+test_pred_labels/
+test_pred_markmaster/
+ttt/
+
+# OS files
+.DS_Store
+Thumbs.db
