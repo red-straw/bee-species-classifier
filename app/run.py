@@ -1,4 +1,4 @@
-"""웹앱 실행: python app/run.py  →  http://127.0.0.1:5002"""
+"""웹앱 실행: python app/run.py  ->  http://127.0.0.1:5002"""
 import argparse
 
 from app import app

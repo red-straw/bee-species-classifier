@@ -10,7 +10,7 @@ def convert(coco_json: Path, image_dir: Path, out_dir: Path, class_names):
     if not images or not annotations:
         raise ValueError("test.json에 images 또는 annotations가 없습니다.")
 
-    # category_id → YOLO class_id (이름 우선, 없으면 0~5 / 1~6 숫자 규칙)
+    # category_id -> YOLO class_id (이름 우선, 없으면 0~5 / 1~6 숫자 규칙)
     name_to_id = {n: i for i, n in enumerate(class_names)}
     cat_map = {}
     for cat in coco.get("categories", []):

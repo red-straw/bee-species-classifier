@@ -2,7 +2,7 @@
 
 입력:  <src>/<class>/*.jpg
 출력:  <dst>/<class>/*.jpg + 같은 이름의 .txt (YOLO 형식)
-생성된 라벨은 사람이 검수한 뒤 clean_labels.py로 빈 라벨을 정리한다.
+생성 후 clean_labels.py로 빈 라벨을 정리한다.
 
     python data_tools/auto_label.py --model models/best.pt --src data/raw --dst data/auto_labels
 """

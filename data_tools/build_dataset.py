@@ -1,12 +1,11 @@
 """클래스 폴더 형태의 데이터를 하나로 모아 train/val(8:2)로 분할.
 
-여러 소스(1차 수동 라벨 1,701장 + 자동 라벨 6,575장)를 합쳐
-최종 8,276장 데이터셋을 만들 때 사용했다.
+1차 데이터 1,701장과 자동 라벨 6,575장을 합쳐 8,276장 데이터셋을 만들 때 사용했다.
 
 입력:  각 --src 아래 <class>/*.jpg + *.txt
 출력:  <dst>/images/{train,val}, <dst>/labels/{train,val}
 
-    python data_tools/build_dataset.py --src data/manual data/auto_labels --dst data/dataset
+    python data_tools/build_dataset.py --src data/first data/auto_labels --dst data/dataset
 """
 import argparse
 import random
@@ -57,7 +56,7 @@ def main():
             shutil.copy2(img, img_dir / f"{name}{img.suffix}")
             shutil.copy2(txt, lbl_dir / f"{name}.txt")
 
-    print(f"총 {len(items)}장 → train {len(splits['train'])} / val {len(splits['val'])}")
+    print(f"총 {len(items)}장 -> train {len(splits['train'])} / val {len(splits['val'])}")
 
 
 if __name__ == "__main__":
