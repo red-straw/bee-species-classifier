@@ -1,0 +1,13 @@
+# 학습 데이터셋 설정 (data/dataset 아래에 데이터셋을 두고 사용)
+path: ../data/dataset
+
+train: images/train
+val: images/val
+
+names:
+  0: apis
+  1: black
+  2: crabro
+  3: ggoma
+  4: jangsu
+  5: simil
