@@ -113,3 +113,8 @@ python evaluation/evaluate.py --model models/best.pt --test-dir data/test
 ## 기술 스택
 
 Python · Ultralytics YOLO (YOLOv8, YOLO26) · PyTorch · Flask · OpenCV
+
+## 라이선스
+
+[AGPL-3.0](LICENSE) — [Ultralytics YOLO](https://github.com/ultralytics/ultralytics)(AGPL-3.0)를 사용하므로 같은 라이선스를 따릅니다. 최종 모델(`best.pt`)도 YOLO 사전학습 가중치를 기반으로 학습했으므로 동일하게 적용됩니다.
+학습 이미지는 웹에서 수집한 것으로 저작권이 각 원작자에게 있어 저장소에 포함하지 않았습니다.
